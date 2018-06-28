@@ -13,7 +13,7 @@ ANSWERS = [
 
 def answer(message)
 	if message.text == '123'
-		"Приветик, #{message.from.first_name}"	
+		"Привет, #{message.from.first_name}"	
 	else
 		ANSWERS.sample	
 	end
