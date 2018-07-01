@@ -17,32 +17,32 @@ ANSWERS = [
 def answer(message)
 	if message.text == '/start'
 		"Привет, #{message.from.first_name}! Я умею отвечать на следующие вопросы: На каком языке ты написан?, Кто твой автор?, Сколько времени?, Какой сегодня день недели?, Сколько времени будет через час? И на любые другие ваши вопросы я тоже умею отвечать."
-	eslif message.text == 'На каком языке ты написан?'
+	elsif message.text == 'На каком языке ты написан?'
 		"Я написан на Ruby"	
-	eslif message.text == 'Кто твой автор?'
+	elsif message.text == 'Кто твой автор?'
 		"Меня сговнокодила Мария и я доволен собой"	
-    eslif message.text == 'Сколько времени?'
+    elsif message.text == 'Сколько времени?'
 		date = Time.now
         date.strftime "%H:%M"
-	eslif message.text == 'Какой сегодня день недели?'
+	elsif message.text == 'Какой сегодня день недели?'
 		date = Time.now
 			i = date.wday  
 			if i == 0
 			   "Сегодня воскресенье"
-			eslif i == 1
+			elsif i == 1
 			   "Вчера была среда сегодня понедельник"
-			eslif i == 2
+			elsif i == 2
 			   "Сегодня вторник"
-			eslif i == 3
+			elsif i == 3
 			   "Сегодня реда"
-			eslif i == 4
+			elsif i == 4
 			   "Четверг"
-			eslif i == 5
+			elsif i == 5
 			   "Пятница, долой работу"
-			eslif i == 6
+			elsif i == 6
 			   "Сегодня суббота! Все на шашлыки!"
-		end 
-	eslif message.text == 'Сколько времени будет через час?'
+			end
+	elsif message.text == 'Сколько времени будет через час?'
 		date = Time.now
         newtime = date + (60 * 60)
         "Через час будет #{newtime.strftime '%H:%M'} по UTC"
